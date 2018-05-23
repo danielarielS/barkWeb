@@ -1,0 +1,833 @@
+* {
+    margin: 0px;
+    font-family: "Gaegu", cursive;
+}
+
+a:hover {
+    color: rgb(215, 116, 97);
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(215, 116, 97);
+}
+
+body {}
+
+#backgroundImg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -12345;
+}
+
+main {
+    /* background-image: url("/grass.png"); */
+}
+
+/*
+                  _
+                 | |
+    __      _____| | ___ ___  _ __ ___   ___   _ __   __ _  __ _  ___
+    \ \ /\ / / _ | |/ __/ _ \| '_ ` _ \ / _ \ | '_ \ / _` |/ _` |/ _ \
+     \ V  V |  __| | (_| (_) | | | | | |  __/ | |_) | (_| | (_| |  __/
+      \_/\_/ \___|_|\___\___/|_| |_| |_|\___| | .__/ \__,_|\__, |\___|
+                                              | |           __/ |
+                                              |_|          |___/
+*/
+
+.welcomeMain {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.welcomeMain h1 {
+    font-size: 6vw;
+    margin-top: 4vh;
+    margin-bottom: 10vh;
+    font-family: "Arvo";
+    letter-spacing: 1vh;
+}
+
+#textHolder {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+    margin-right: 2vh;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+.arrow:active {
+    background-color: black;
+    color: white;
+}
+
+/* .arrow:enabled {
+    background-color: rgba(141, 166, 184, 0.8);
+} */
+
+#reg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25vw;
+    justify-content: center;
+    text-align: center;
+}
+
+#reg p {
+    font-size: 2.5vw;
+    margin-bottom: 5vh;
+}
+
+#log {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25vw;
+    justify-content: center;
+    text-align: center;
+}
+
+#log p {
+    font-size: 2.5vw;
+    margin-bottom: 5vh;
+}
+
+#dogLogo {
+    height: 19vw;
+    width: 19vw;
+    margin-bottom: 5vh;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 41%;
+    top: 62%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#dogLogo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ////// Register component //////// */
+
+.register {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 40vw;
+    flex-wrap: wrap;
+}
+
+.register label {
+    /* margin-bottom: 1vh; */
+    margin-top: 2vh;
+    font-size: 1.5vw;
+}
+
+.register input {
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    width: 15vw;
+    /* margin-bottom: 1vh; */
+    margin-top: 2vh;
+    background-color: rgba(188, 224, 91, 0);
+    font-size: 1.5vw;
+    overflow: hidden;
+}
+
+.register .arrow {
+    margin-top: 5vh;
+    margin-left: 17.5vh;
+    cursor: pointer;
+}
+
+.errmsg {
+    position: absolute;
+    left: 42%;
+    top: 40%;
+    color: red;
+    font-size: 1.5vw;
+    width: 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ////// Login component //////// */
+
+/*
+                  _
+                 (_)
+  _ __ ___   __ _ _ _ __     __ _ _ __  _ __
+ | '_ ` _ \ / _` | | '_ \   / _` | '_ \| '_ \
+ | | | | | | (_| | | | | | | (_| | |_) | |_) |
+ |_| |_| |_|\__,_|_|_| |_|  \__,_| .__/| .__/
+                                 | |   | |
+                                 |_|   |_|
+ */
+
+/* ////////////// profile page + nav ////////// */
+
+.profileNav {
+    position: absolute;
+    top: 2vh;
+    right: 40vw;
+    font-size: 1.5vw;
+    color: black;
+    text-decoration: none;
+}
+
+.online_search {
+    position: absolute;
+    top: 2vh;
+    right: 30vw;
+    font-size: 1.5vw;
+    color: black;
+    text-decoration: none;
+}
+
+.chatNav {
+    position: absolute;
+    top: 2vh;
+    right: 50vw;
+    font-size: 1.5vw;
+    color: black;
+    text-decoration: none;
+}
+
+.logoText {
+    font-size: 5vw;
+    position: absolute;
+    top: 1vh;
+    left: 5vh;
+    font-family: "Arvo";
+    letter-spacing: 1vh;
+}
+
+.profilePic {
+    position: absolute;
+    width: 8vh;
+    height: 8vh;
+    overflow: hidden;
+    top: 1vh;
+    right: 5vw;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.profilePic img {
+    width: 100%;
+    height: 100%;
+}
+
+.friendsNav {
+    position: absolute;
+    top: 2vh;
+    right: 12vw;
+    cursor: pointer;
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: black;
+}
+
+#searchUsers {
+    position: absolute;
+    top: 2vh;
+    right: 19vw;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+#searchUsersBox {
+    position: absolute;
+    width: 15vh;
+    top: 6vh;
+    right: 28vh;
+}
+
+#searchUsersBox>button {
+    width: 50%;
+}
+
+#searchUsersBox>button:hover {
+    background-color: rgb(215, 116, 97);
+}
+
+#searchUsers:hover {
+    color: rgb(215, 116, 97);
+}
+
+.logout {
+    position: absolute;
+    overflow: hidden;
+    right: 1vh;
+    top: 1vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.logout img {
+    width: 100%;
+    height: 100%;
+}
+
+.UserPic {
+    width: 15vw;
+    height: 15vw;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.UserPic img {
+    width: 100%;
+    height: 100%;
+}
+
+.UserPic+p {
+    font-size: 2vw;
+}
+
+.userPicHolder {
+    position: absolute;
+    top: 30vh;
+    left: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.appMain {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ////////// Bio component ///////// */
+
+.bioHolder>div {
+    width: 35vw;
+    height: 23vh;
+    border: 2px solid black;
+    border-radius: 40px;
+    position: absolute;
+    top: 30vh;
+    left: 55vh;
+    overflow: auto;
+    padding: 1.5vh;
+}
+
+.bioLink {
+    position: absolute;
+    top: 58vh;
+    left: 76vh;
+    text-decoration: none;
+    color: black;
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+.bioHolder>p {
+    padding: 1vh;
+}
+
+.editBio {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(56, 65, 60, 0.76);
+    z-index: 123;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editBioSmall {
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    z-index: 12345;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+}
+
+#editBioSmall textarea {
+    margin-top: 2vh;
+    outline: none;
+    resize: none;
+    border: 1px solid #888;
+    font-size: 2vw;
+    border-radius: 40px;
+    padding: 1.5vh;
+}
+
+.link1 {
+    text-decoration: none;
+    font-size: 3vw;
+    color: black;
+    position: absolute;
+    top: 72vh;
+    right: 25vw;
+}
+
+.link2 {
+    text-decoration: none;
+    font-size: 3vw;
+    color: black;
+    position: absolute;
+    top: 72vh;
+    left: 25vw;
+}
+
+/* //////////// friends component //////// */
+
+#dudeText {
+    position: absolute;
+    top: 45vh;
+    left: 20vh;
+    font-size: 6vw;
+}
+
+.usersContainer {
+    height: 70vh;
+    width: 100vw;
+    position: absolute;
+    top: 15vh;
+}
+
+#wannabeHolder {
+    height: 35vh;
+    width: 80vw;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.wannabe>div {
+    width: 20vh;
+    height: 20vh;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.wannabe>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+.wannabe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4vh;
+}
+
+#friendsHolder {
+    height: 35vh;
+    width: 80vw;
+    display: flex;
+    overflow: hidden;
+}
+
+.friend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4vh;
+}
+
+.friend>div {
+    width: 20vh;
+    height: 20vh;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.friend>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+#pending {
+    position: absolute;
+    left: 35vw;
+    top: 0vh;
+}
+
+#approved {
+    position: absolute;
+    left: 35vw;
+    top: 34vh;
+}
+
+/* ////////other user component///////// */
+
+.otherUser {
+    position: absolute;
+    top: 25vh;
+    left: 20vh;
+}
+
+.otherUserSmall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otherUserSmall>div {
+    width: 25vh;
+    height: 25vh;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.otherUserSmall>div>img {
+    height: 100%;
+    width: 100%;
+}
+
+#otherBio {
+    width: 36vw;
+    height: 30vh;
+    border: 2px solid black;
+    border-radius: 40px;
+    position: absolute;
+    top: 0vh;
+    left: 40vh;
+    padding: 2vh;
+    overflow: scroll;
+}
+
+.otherUser>a {
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: black;
+    margin-left: 3vh;
+    margin-top: 1vh;
+}
+
+.otherUser>a:hover {
+    color: rgb(215, 116, 97);
+}
+
+/* /////////// online users component ///////// */
+
+#noUsersOnline {
+    position: absolute;
+    font-size: 4vw;
+    top: 30vh;
+    left: 22vw;
+}
+
+.onlineHolder {
+    position: absolute;
+    top: 30vh;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.userHolder>div {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userHolder>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+.userHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15vh;
+    height: 25vh;
+    margin: 4vh;
+}
+
+/* ////////// upload modle //////// */
+
+.fileUp {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* margin-left: 0.5%; */
+}
+
+.fileUp>button {
+    width: 9.5vh;
+    cursor: pointer;
+    margin-right: 6vh;
+}
+
+.fileUp>button:hover {
+    background-color: rgb(215, 116, 97);
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    font-size: 2vw;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    margin-left: 4vh;
+    width: 100%;
+}
+
+.inputfile:focus+label, .inputfile+label:hover {
+    color: red;
+}
+
+.inputfile:focus+label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+label * {
+    pointer-events: none;
+}
+
+#popUpload {
+    position: absolute;
+    width: 20vw;
+    height: 40vh;
+    top: -50vh;
+    right: 65vh;
+    background-color: rgb(228, 223, 87);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1234566;
+    transition: all 1s;
+    filter: blur(0px);
+    /* animation: showPop 1000ms; */
+}
+
+@keyframes showPop {
+    from {
+        /* z-index: 1234566 !important; */
+        transform: translateY(40vh) !important;
+    }
+    , to {
+        transform: translateY(0vh) !important;
+        /* z-index: 1234566 !important; */
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.show {
+    top: 0vh !important;
+    z-index: 1234566 !important;
+    filter: blur(0px) !important;
+    transition: all 1s;
+    /* transform: translateY(40vh) !important; */
+}
+
+.hide {
+    top: -50vh !important;
+    z-index: 1234566 !important;
+}
+
+#submit {
+    width: 100%;
+    height: 20%;
+    cursor: pointer;
+    font-size: 2vw;
+}
+
+#submit:hover {
+    background-color: rgb(215, 116, 97);
+}
+
+#Upload2 {
+    cursor: pointer;
+}
+
+#Upload2:hover {
+    background-color: rgb(215, 116, 97);
+}
+
+/* //////chat component /////// */
+
+.chatHolder {
+    width: 94vw;
+    height: 70vh;
+    position: absolute;
+    top: 30vh;
+    overflow: scroll;
+    font-size: 1.3vw;
+    background-color: rgba(153, 168, 150, 0.38);
+    margin-left: 3vw;
+}
+
+.smallChatHolder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    margin-top: 4vh;
+}
+
+.chatUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2vh;
+    flex-wrap: nowrap;
+    width: 20vw;
+}
+
+.theChat {
+    width: 65%;
+    border-radius: 40px;
+    background-color: rgba(170, 219, 162, 0.85);
+    margin-right: 15vh;
+    padding: 2vh;
+    overflow: scroll;
+}
+
+.chatUser>div {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.chatUser>div>img {
+    height: 100%;
+    width: 100%;
+}
+
+.theNameOfUserComment {
+    font-size: 1.7vw;
+}
+
+#chatText {
+    color: #666;
+    font-size: 1.5vw;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    padding: 10px;
+    height: 9vh;
+    width: 48vw;
+    border: #999 2px solid;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    position: absolute;
+    top: 13vh;
+    left: 5vh;
+    overflow: auto;
+    resize: none;
+}
+
+#chatText:focus {
+    color: #000;
+    outline: none;
+    border: #35a5e5 10px solid;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+/* /////// search users ////////// */
+
+.searchUsers {
+    background-color: rgba(153, 168, 150, 0.38);
+    height: 14vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid black;
+    margin-left: -3.2vw;
+    width: 8.5vw;
+}
+
+.theNamesToShowInSearch {
+    width: 100%;
+    text-decoration: none;
+}
+
+#searchUsersBox>textarea {
+    color: #666;
+    font-size: 1vw;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    padding: 2px;
+    height: 2vh;
+    width: 7.4vw;
+    border: #999 2px solid;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    overflow: auto;
+    resize: none;
+    margin-left: -3vw;
+}
+
+#searchUsersBox>textarea:focus {
+    color: #000;
+    outline: none;
+    border: #35a5e5 5px solid;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
