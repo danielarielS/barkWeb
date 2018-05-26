@@ -15,59 +15,15 @@ export class Chat extends React.Component {
         super(props);
         this.state = {};
         this.enterText = this.enterText.bind(this);
-        this.runLocation = this.runLocation.bind(this);
     }
     enterText(e) {
-        this.runLocation();
         if (e.keyCode == "13" && e.target.value.trim().length > 0) {
             emit("chatMessage", e.target.value);
             e.target.value = "";
             e.preventDefault();
         }
     }
-    runLocation() {
-        let geo = navigator.geolocation;
-        geo.getCurrentPosition((position) => {
-            // console.log(
-            //     `${position.coords.latitude} ${position.coords.longitude}`
-            // );
-            alert(
-                `${position.coords.latitude} || ${position.coords.longitude}`
-            );
-        });
-        // function geo_success(position) {
-        //     // do_something(position.coords.latitude, position.coords.longitude);
-        //
-        //     console.log(position.coords.latitude);
-        //     console.log(position.coords.longitude);
-        // }
-        //
-        // function geo_error() {
-        //     // alert("Sorry, no position available.");
-        //     console.log("Sorry, no position available.");
-        // }
-        //
-        // var geo_options = {
-        //     enableHighAccuracy: true,
-        //     maximumAge: 3000000,
-        //     timeout: 2700000
-        // };
-        // var wpid = navigator.geolocation.watchPosition(
-        //     geo_success,
-        //     geo_error,
-        //     geo_options
-        // );
-    }
     componentDidMount() {
-        // if ("geolocation" in navigator) {
-        //     console.log("geolocation works");
-        //     let geo = navigator.geolocation;
-        //     geo.getCurrentPosition(function(position) {
-        //         console.log(position.coords.latitude);
-        //         console.log(position.coords.longitude);
-        //     });
-        // }
-
         this.elem.scrollTop = this.elem.scrollHeight - this.elem.clientHeight;
     }
     componentDidUpdate() {
