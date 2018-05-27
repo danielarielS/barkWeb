@@ -17,6 +17,7 @@ export class Profile extends React.Component {
                         newUrl={this.props.newUrl}
                         first={this.props.first}
                         last={this.props.last}
+                        toggleProfilePic={this.props.toggleProfilePic}
                     />
 
                     <Route
@@ -57,6 +58,7 @@ function UserPic(props) {
                     />
                 </div>
                 <p>{`#${props.first} ${props.last}`}</p>
+                <button onClick={props.toggleProfilePic}>Edit Picture</button>
             </div>
         );
     } else {
@@ -66,6 +68,7 @@ function UserPic(props) {
                     <img src="/dog.png" alt={`${props.first} ${props.last}`} />
                 </div>
                 <p>{`#${props.first} ${props.last}`}</p>
+                <button onClick={props.toggleProfilePic}>Edit Picture</button>
             </div>
         );
     }
@@ -76,8 +79,8 @@ function Bio(props) {
             <div>
                 <p>{props.bio}</p>
             </div>
-            <Link className="bioLink" to="/profile/editBio">
-                Edit your BIO
+            <Link to="/profile/editBio">
+                <button className="bioLink">Edit Bio</button>
             </Link>
         </div>
     );

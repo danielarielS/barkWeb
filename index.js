@@ -119,8 +119,10 @@ function formatDate(date) {
     var day = date.getDate();
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
 
-    return day + " " + monthNames[monthIndex] + " " + year;
+    return day + " " + monthNames[monthIndex] + " " + hour + ":" + minutes;
 }
 // function sendReq(path) {
 //     return new Promise(function(resolve, reject) {

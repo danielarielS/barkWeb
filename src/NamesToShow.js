@@ -67,7 +67,7 @@ export class NamesToShow extends React.Component {
                             cols="15"
                             name="name"
                             onChange={this.handleChange}
-                            placeholder="name?"
+                            placeholder="type a name..."
                         />
                         {this.state.showNames && (
                             <ListOfNames

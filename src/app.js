@@ -142,6 +142,7 @@ export default class App extends React.Component {
                                         newUrl={this.state.newUrl}
                                         bio={this.state.bio}
                                         setBio={this.setBio}
+                                        toggleProfilePic={this.toggleProfilePic}
                                     />
                                 )}
                             />
