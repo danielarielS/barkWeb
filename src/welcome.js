@@ -5,7 +5,31 @@ import axios from "./axios";
 export class Welcome extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            showArrowReg: true,
+            showArrowLog: true
+        };
+        this.closeArrowReg = this.closeArrowReg.bind(this);
+        this.closeArrowLog = this.closeArrowLog.bind(this);
+        this.openArrowReg = this.openArrowReg.bind(this);
+    }
+    closeArrowLog() {
+        this.setState({
+            showArrowLog: false,
+            showArrowReg: true
+        });
+    }
+    closeArrowReg() {
+        this.setState({
+            showArrowReg: false,
+            showArrowLog: true
+        });
+    }
+    openArrowReg() {
+        this.setState({
+            showArrowReg: true,
+            showArrowLog: true
+        });
     }
     render() {
         return (
@@ -15,25 +39,43 @@ export class Welcome extends React.Component {
                     <div id="textHolder">
                         <span id="reg">
                             <p>New to the site? Register</p>
-                            <Link to="/register">
-                                <div className="arrow">
-                                    <img src="/arrow.png" />
-                                </div>
-                            </Link>
+                            {this.state.showArrowReg && (
+                                <Link to="/register">
+                                    <div
+                                        className="arrow"
+                                        onClick={this.closeArrowReg}
+                                    >
+                                        <img src="/arrow.png" />
+                                    </div>
+                                </Link>
+                            )}
                             <Route
-                                exact
                                 path="/register"
-                                component={Register}
+                                render={() => (
+                                    <Register
+                                        openArrowReg={this.openArrowReg}
+                                    />
+                                )}
                             />
                         </span>
                         <span id="log">
                             <p>Already a member? LogIn</p>
-                            <Link to="/login">
-                                <div className="arrow">
-                                    <img src="/arrow.png" />
-                                </div>
-                            </Link>
-                            <Route path="/login" component={Login} />
+                            {this.state.showArrowLog && (
+                                <Link to="/login">
+                                    <div
+                                        className="arrow"
+                                        onClick={this.closeArrowLog}
+                                    >
+                                        <img src="/arrow.png" />
+                                    </div>
+                                </Link>
+                            )}
+                            <Route
+                                path="/login"
+                                render={() => (
+                                    <Login openArrowLog={this.openArrowLog} />
+                                )}
+                            />
                         </span>
                     </div>
                     <div id="dogLogo">
@@ -73,6 +115,9 @@ export class Register extends React.Component {
                     });
                 }
             });
+    }
+    componentWillUnmount() {
+        this.props.openArrowReg;
     }
     render() {
         return (
@@ -130,6 +175,9 @@ export class Login extends React.Component {
                     });
                 }
             });
+    }
+    componentWillUnmount() {
+        this.props.openArrowLog;
     }
     render() {
         return (
