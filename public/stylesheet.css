@@ -19,7 +19,7 @@ body {}
 
 #backgroundImg {
     position: fixed;
-    height: 100vh;
+    height: 165vh;
     width: 100vw;
     z-index: -12345;
 }
@@ -50,8 +50,8 @@ main {
 
 .welcomeMain h1 {
     font-size: 6vw;
-    margin-top: 4vh;
-    margin-bottom: 10vh;
+    margin-top: 8vh;
+    margin-bottom: 5vh;
     font-family: "Arvo";
     letter-spacing: 1vh;
 }
@@ -97,6 +97,7 @@ main {
 
 #reg p {
     font-size: 2.5vw;
+    line-height: 6vh;
     margin-bottom: 5vh;
 }
 
@@ -110,6 +111,7 @@ main {
 
 #log p {
     font-size: 2.5vw;
+    line-height: 6vh;
     margin-bottom: 5vh;
 }
 
@@ -122,15 +124,15 @@ main {
     border-radius: 50%;
     position: absolute;
     left: 41%;
-    top: 62%;
+    top: 45%;
     display: flex;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
 #dogLogo img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 82%;
+    max-height: 93%;
 }
 
 /* ////// Register component //////// */
@@ -148,6 +150,7 @@ main {
     /* margin-bottom: 1vh; */
     margin-top: 2vh;
     font-size: 1.5vw;
+    font-weight: bold;
 }
 
 .register input {
@@ -233,8 +236,8 @@ main {
 
 .profilePic {
     position: absolute;
-    width: 8vh;
-    height: 8vh;
+    width: 6vh;
+    height: 6vh;
     overflow: hidden;
     top: 1vh;
     right: 5vw;
@@ -289,7 +292,7 @@ main {
     position: absolute;
     overflow: hidden;
     right: 1vh;
-    top: 1vh;
+    top: 1.6vh;
     width: 5vh;
     height: 5vh;
     border-radius: 50%;
@@ -297,8 +300,8 @@ main {
 }
 
 .logout img {
-    width: 100%;
-    height: 100%;
+    width: 82%;
+    height: 75%;
 }
 
 .UserPic {
@@ -343,7 +346,8 @@ main {
     top: 30vh;
     left: 55vh;
     overflow: auto;
-    padding: 1.5vh;
+    padding: 2.5vh;
+    font-size: 3vh;
 }
 
 .bioLink {
@@ -352,7 +356,7 @@ main {
     left: 76vh;
     text-decoration: none;
     color: black;
-    font-size: 2vw;
+    font-size: 1.5vw;
     cursor: pointer;
 }
 
@@ -379,6 +383,9 @@ main {
     flex-direction: column;
     align-items: center;
     border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #editBioSmall textarea {
@@ -396,7 +403,7 @@ main {
     font-size: 3vw;
     color: black;
     position: absolute;
-    top: 72vh;
+    top: 80vh;
     right: 25vw;
 }
 
@@ -405,7 +412,7 @@ main {
     font-size: 3vw;
     color: black;
     position: absolute;
-    top: 72vh;
+    top: 80vh;
     left: 25vw;
 }
 
@@ -419,10 +426,13 @@ main {
 }
 
 .usersContainer {
-    height: 70vh;
-    width: 100vw;
-    position: absolute;
+    height: 85vh;
+    width: 90vw;
+    position: relative;
     top: 15vh;
+    left: 5vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 40px;
 }
 
 #wannabeHolder {
@@ -451,6 +461,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin: 4vh;
+    font-size: 1.5vw;
 }
 
 #friendsHolder {
@@ -465,6 +476,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin: 4vh;
+    font-size: 1.5vw;
 }
 
 .friend>div {
@@ -482,13 +494,13 @@ main {
 
 #pending {
     position: absolute;
-    left: 35vw;
+    left: 38%;
     top: 0vh;
 }
 
 #approved {
     position: absolute;
-    left: 35vw;
+    left: 38%;
     top: 34vh;
 }
 
@@ -555,10 +567,13 @@ main {
 .onlineHolder {
     position: absolute;
     top: 30vh;
-    width: 100vw;
+    left: 5vw;
+    width: 90vw;
     height: 70vh;
     display: flex;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.69);
+    border-radius: 40px;
 }
 
 .userHolder>div {
@@ -587,6 +602,7 @@ main {
 .fileUp {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     /* margin-left: 0.5%; */
 }
@@ -615,8 +631,6 @@ main {
     font-weight: 700;
     color: black;
     cursor: pointer;
-    margin-left: 4vh;
-    width: 100%;
 }
 
 .inputfile:focus+label, .inputfile+label:hover {
@@ -706,7 +720,7 @@ main {
     top: 30vh;
     overflow: scroll;
     font-size: 1.3vw;
-    background-color: rgba(153, 168, 150, 0.38);
+    background-color: rgba(255, 255, 255, 0.65);
     margin-left: 3vw;
 }
 
@@ -730,7 +744,7 @@ main {
 .theChat {
     width: 65%;
     border-radius: 40px;
-    background-color: rgba(170, 219, 162, 0.85);
+    background-color: rgba(255, 255, 255, 0.8);
     margin-right: 15vh;
     padding: 2vh;
     overflow: scroll;
@@ -794,7 +808,7 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid black;
-    margin-left: -3.2vw;
+    margin-left: -2.8vw;
     width: 8.5vw;
 }
 
@@ -820,7 +834,13 @@ main {
     -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
     overflow: auto;
     resize: none;
-    margin-left: -3vw;
+    margin-left: -2.7vw;
+    display: flex;
+    justify-content: center;
+}
+
+#searchUsersBox>textarea::placeholder {
+    padding-left: 2.5vw;
 }
 
 #searchUsersBox>textarea:focus {

@@ -66,7 +66,7 @@ export class Register extends React.Component {
             })
             .then((resp) => {
                 if (resp.data.success) {
-                    location.replace("/profile");
+                    location.replace("/chat");
                 } else {
                     this.setState({
                         error: true
@@ -123,7 +123,7 @@ export class Login extends React.Component {
             })
             .then((resp) => {
                 if (resp.data.success) {
-                    location.replace("/profile");
+                    location.replace("/chat");
                 } else {
                     this.setState({
                         wrong: true

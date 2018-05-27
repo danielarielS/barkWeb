@@ -21,18 +21,25 @@ export class ProfilePicUpload extends React.Component {
         });
     }
     upload(e) {
-        const formData = new FormData();
-        formData.append("file", this.state.file);
-        axios
-            .post("/upload", formData)
-            .then((response) => {
-                this.setState({
-                    newUrl: response.data.url
-                });
-            })
-            .catch(function(err) {
-                console.log("there was an error in upload", err);
-            });
+        this.setState(
+            {
+                file: e.target.files[0]
+            },
+            () => {
+                const formData = new FormData();
+                formData.append("file", this.state.file);
+                axios
+                    .post("/upload", formData)
+                    .then((response) => {
+                        this.setState({
+                            newUrl: response.data.url
+                        });
+                    })
+                    .catch(function(err) {
+                        console.log("there was an error in upload", err);
+                    });
+            }
+        );
     }
     upload2() {
         axios
@@ -77,14 +84,14 @@ export class ProfilePicUpload extends React.Component {
                         className="inputfile"
                         type="file"
                         name="file"
-                        onChange={this.setFile}
+                        onChange={this.upload}
                         data-multiple-caption="{count} files selected"
                         multiple
                     />
                     <label htmlFor="inputfile">Your Own Pic</label>
-                    <button onClick={this.upload}>Upload</button>
+                    {/* <button onClick={this.upload}>Upload</button> */}
                 </div>
-                <div className="urlPic">
+                {/* <div className="urlPic">
                     <p>put your own URL</p>
                     <input
                         type="text"
@@ -95,7 +102,7 @@ export class ProfilePicUpload extends React.Component {
                     <button id="Upload2" onClick={this.upload2}>
                         Upload2
                     </button>
-                </div>
+                </div> */}
                 <button onClick={this.props.closeuploader}>Close</button>
                 <button id="submit" className="button" onClick={this.submit}>
                     Submit

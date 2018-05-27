@@ -427,7 +427,7 @@ app.get("/logout", (req, res) => {
 });
 app.get("/welcome", function(req, res) {
     if (req.session.userInfo) {
-        res.redirect("/profile");
+        res.redirect("/chat");
     } else {
         res.sendFile(__dirname + "/index.html");
     }
