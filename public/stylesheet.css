@@ -201,7 +201,7 @@ main {
 .profileNav {
     position: absolute;
     top: 2vh;
-    right: 40vw;
+    right: 42vw;
     font-size: 1.5vw;
     color: black;
     text-decoration: none;
@@ -210,7 +210,7 @@ main {
 .online_search {
     position: absolute;
     top: 2vh;
-    right: 30vw;
+    right: 31vw;
     font-size: 1.5vw;
     color: black;
     text-decoration: none;
@@ -232,6 +232,7 @@ main {
     left: 5vh;
     font-family: "Arvo";
     letter-spacing: 1vh;
+    color: black;
 }
 
 .profilePic {
@@ -254,7 +255,7 @@ main {
 .friendsNav {
     position: absolute;
     top: 2vh;
-    right: 12vw;
+    right: 23vw;
     cursor: pointer;
     font-size: 1.5vw;
     text-decoration: none;
@@ -264,7 +265,7 @@ main {
 #searchUsers {
     position: absolute;
     top: 2vh;
-    right: 19vw;
+    right: 12vw;
     cursor: pointer;
     font-size: 1.5vw;
 }
@@ -608,7 +609,7 @@ main {
     align-items: center;
     width: 15vh;
     height: 25vh;
-    margin: 4vh;
+    margin: 6vh;
 }
 
 .userHolder a {
@@ -829,7 +830,7 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     border: 1px solid black;
-    margin-left: -2.8vw;
+    margin-left: 4.2vw;
     width: 8.5vw;
 }
 
@@ -855,7 +856,7 @@ main {
     -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
     overflow: auto;
     resize: none;
-    margin-left: -2.7vw;
+    margin-left: 4.3vw;
     display: flex;
     justify-content: center;
 }
@@ -871,4 +872,27 @@ main {
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+#aboutHolder {
+    position: relative;
+    top: 15vh;
+    left: 3vw;
+    height: 85vh;
+    width: 94vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+}
+
+#aboutHolder div {
+    margin-top: 5vw;
+    font-size: 3.5vw;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+#aboutHolder div>p {
+    text-align: center;
 }

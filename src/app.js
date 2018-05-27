@@ -103,25 +103,29 @@ export default class App extends React.Component {
                         closeuploader={this.closeuploader}
                     />
                 )}
-                <div className="appMain" id="megaHolder">
-                    <header>
-                        <div className="logout">
-                            <a href="/logout">
-                                <img src="/logout.png" />
-                            </a>
-                        </div>
-                        <Logo />
-                        <ProfilePic
-                            first={this.state.first}
-                            last={this.state.last}
-                            newUrl={this.state.newUrl}
-                            toggleProfilePic={this.toggleProfilePic}
-                        />
-                    </header>
-                    <BrowserRouter>
+                <BrowserRouter>
+                    <div className="appMain" id="megaHolder">
+                        <header>
+                            <div className="logout">
+                                <a href="/logout">
+                                    <img src="/logout.png" />
+                                </a>
+                            </div>
+                            <Link to="/about">
+                                <Logo />
+                            </Link>
+                            <Link to="/profile">
+                                <ProfilePic
+                                    first={this.state.first}
+                                    last={this.state.last}
+                                    newUrl={this.state.newUrl}
+                                />
+                            </Link>
+                        </header>
+
                         <div>
-                            <Link to="/profile" className="profileNav">
-                                view profile
+                            <Link to="/about" className="profileNav">
+                                About
                             </Link>
                             <Link to="/friends" className="friendsNav">
                                 friends
@@ -132,7 +136,7 @@ export default class App extends React.Component {
                             <Link to="/chat" className="chatNav">
                                 chat
                             </Link>
-
+                            <Route path="/about" component={About} />
                             <Route
                                 path="/profile"
                                 render={() => (
@@ -166,20 +170,33 @@ export default class App extends React.Component {
                             <Route path="/chat" component={Chat} />
                             <NamesToShow />
                         </div>
-                    </BrowserRouter>
-                </div>
+                    </div>
+                </BrowserRouter>
             </React.Fragment>
         );
     }
 }
-
+function About() {
+    return (
+        <div id="aboutHolder">
+            <div>
+                <p>
+                    This is a website for dog owners to connect with each other,
+                    and talk about their favourite subject, DOGS!!! You first
+                    setup your profile and then go and make new friends and even
+                    join in on an online chat.{" "}
+                </p>
+            </div>
+        </div>
+    );
+}
 function Logo() {
     return <h1 className="logoText">barkWEB</h1>;
 }
 function ProfilePic(props) {
     if (!props.first) {
         return (
-            <div className="profilePic" onClick={props.toggleProfilePic}>
+            <div className="profilePic">
                 <img
                     src="https://i.redd.it/ounq1mw5kdxy.gif"
                     alt="spinner..."
@@ -188,13 +205,13 @@ function ProfilePic(props) {
         );
     } else if (!props.newUrl) {
         return (
-            <div className="profilePic" onClick={props.toggleProfilePic}>
+            <div className="profilePic">
                 <img src="/dog.png" alt={`${props.first} ${props.last}`} />
             </div>
         );
     } else {
         return (
-            <div className="profilePic" onClick={props.toggleProfilePic}>
+            <div className="profilePic">
                 <img src={props.newUrl} alt={`${props.first} ${props.last}`} />
             </div>
         );
