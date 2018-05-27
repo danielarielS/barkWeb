@@ -325,7 +325,7 @@ app.post("/setBio", (req, res) => {
 });
 
 app.post("/upload", uploader.single("file"), upload, function(req, res) {
-    let url = `https://s3.amazonaws.com/danielsocial/${req.file.filename}`;
+    let url = `https://s3.amazonaws.com/danielspiced/${req.file.filename}`;
     saveUserImage(url, req.session.userInfo.id)
         .then((result) => {
             res.json({
@@ -338,7 +338,7 @@ app.post("/upload", uploader.single("file"), upload, function(req, res) {
         });
 });
 app.post("/upload2", downloadImage, upload, (req, res) => {
-    let url = `https://s3.amazonaws.com/danielsocial/${req.file.filename}`;
+    let url = `https://s3.amazonaws.com/danielspiced/${req.file.filename}`;
     saveUserImage(url, req.session.userInfo.id)
         .then((result) => {
             res.json({
